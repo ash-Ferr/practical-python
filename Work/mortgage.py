@@ -18,9 +18,10 @@ month=0
 actual_payment=0.00
 total_paid=0.00
 
-while principal>0 & month<100:
-    if(month>=extra_payment_start & month<=extra_payment_start):
+while principal>0 and month<10:
+    if(month>=extra_payment_start and month<=extra_payment_end):
         actual_payment=payment+extra_payment
+        print(-f'in range of extra payment:\n month{month}')
     else:
         actual_payment=payment
     month=month+1
@@ -31,7 +32,8 @@ while principal>0 & month<100:
     principal=principal+interest_payment-actual_payment
     total_paid=total_paid+actual_payment
     total_intrest_payment=total_intrest_payment+interest_payment
-    print(f'M:{month}, Beg. principal:{round(beginning_principal,2)}, Interest Payment:{round(interest_payment,2)}, payment:{round(actual_payment,2)},Ending Bal.{round(principal,2)}')
+    print(f'M:{month}, Beg. principal:{round(beginning_principal,2)},Interest Payment:{round(interest_payment,2)}, payment:{round(actual_payment,2)},Ending Bal:{round(principal,2)}')
           
-print('Total Paid: $ ',round(total_paid,2),'\n','Months to Payoff: ',month,'\n',
-                                   month//12,' Years and ',month%12,' Months' )
+print('Total Paid: $ ',round(total_paid,2),'\n','Months to Payoff: ',
+      month,'\n',month//12,' Years and ',month%12,' Months' )
+print(-f'Months of extra payment: {extra_payment}\n Month extra payment start{extra_payment_start}\n')
